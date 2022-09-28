@@ -1,3 +1,6 @@
+const getData = require("./index");
+const axios = require("axios");
+
 const data = [
   {
     id: 1,
@@ -115,9 +118,6 @@ const data = [
     },
   },
 ];
-
-const getData = require("./index");
-const axios = require("axios");
 
 jest.mock("axios");
 
