@@ -1,8 +1,6 @@
-import logo from "./logo.svg";
 import "antd/dist/antd.css";
 import { Button, Input, Select } from "antd";
 import { useState } from "react";
-// import './App.css';
 
 const { Option } = Select;
 
