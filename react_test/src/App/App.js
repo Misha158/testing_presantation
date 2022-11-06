@@ -15,7 +15,7 @@ function App() {
       style={{ width: "600px", margin: "0 auto", padding: "15px" }}
     >
       <Select
-        style={{ width: 120 }}
+        style={{ width: 120, padding: "5px 0" }}
         onChange={(event) => {
           setSelectValue(event);
         }}
@@ -38,11 +38,18 @@ function App() {
         type="primary"
         disabled={!inputValue || !selectValue}
         onClick={() => setMessage(`${inputValue} ${selectValue} `)}
+        style={{ display: "block", margin: "5px 0" }}
       >
-        Save
+        Save sadsasadsad asdsad
       </Button>
 
-      <div>{message}</div>
+      {message && (
+        <div
+          style={{ background: "grey", padding: "5px", borderRadius: "5px" }}
+        >
+          {message}
+        </div>
+      )}
     </div>
   );
 }

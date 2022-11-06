@@ -20,8 +20,10 @@ const response = {
 };
 
 jest.mock("axios");
-// axios.get = jest.fn();
-// const spyAxiosGet = jest.spyOn(axios, "get");
+
+axios.get = jest.fn();
+
+const spyAxiosGet = jest.spyOn(axios, "get");
 
 describe("Request on server", () => {
   it("make request to server", async () => {
@@ -32,7 +34,10 @@ describe("Request on server", () => {
     const users = await screen.findAllByTestId("user-item");
     expect(users.length).toBe(3);
     expect(axios.get).toBeCalledTimes(1);
-    // expect(spyAxiosGet).toBeCalledTimes(1);
+    expect(axios.get).toBeCalledWith(
+      "https://jsonplaceholder.typicode.com/users"
+    );
+    expect(spyAxiosGet).toBeCalledTimes(1);
     // screen.debug();
   });
 });
